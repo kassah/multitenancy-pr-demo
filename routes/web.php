@@ -22,7 +22,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::middleware('tenant')->group(function() {
-    // routes
+    Route::get('/tenant-test', function () {
+        return view('tenant-test');
+    })->name('tenant-test');
 });
 
 require __DIR__.'/auth.php';
